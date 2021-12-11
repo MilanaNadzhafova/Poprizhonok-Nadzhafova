@@ -1,0 +1,91 @@
+﻿<Window x:Class="NadzhafovaMK.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NadzhafovaMK"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="570.774" Width="800" Loaded="Window_Loaded" MinHeight="500" MinWidth="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#43DCFE" BorderThickness="0 0 0 1">
+
+
+            <Grid>
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                    <Image Source="Resources/Попрыженок.png" Height="40" />
+                    <Label Content = "Попрыженок" VerticalContentAlignment="Center"  FontFamily="Comic Sans MS" FontSize="16"/>
+                </StackPanel>
+                <Label Content="Список продукции" VerticalContentAlignment="Center" HorizontalAlignment="Center"  FontSize="20" FontFamily="Comic Sans MS"/>
+
+                <Button x:Name="back" Content="Back" Height="25" Width="70" HorizontalAlignment="Right" Margin="10"    Background="#FFE8E8E8"  FontFamily="Calibri">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+              
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.ColumnSpan="4" Text="Введите для поиска" FontSize="15"    Height="40" >
+                    
+                </TextBox>
+                <ComboBox Name="FilterCmb"  Grid.Column="6" Grid.ColumnSpan="2" Height="40" FontSize="15"  Margin="11">
+                    <ComboBoxItem Content="Фильтрация" IsSelected="True"/>
+                    <ComboBoxItem Content="Цена"/>
+                    <ComboBoxItem Content="Название"/>
+                </ComboBox>
+                <ComboBox Grid.Column="4" Grid.ColumnSpan="2" Height="40" Name="SortCmb" FontSize="15" Margin="11">
+                    <ComboBoxItem Content="Сортировка" IsSelected="True"/>
+                    <ComboBoxItem Content="Условие 1"/>
+                    <ComboBoxItem Content="Условие 2"/>
+                    <ComboBoxItem Content="Условие 3" />
+                </ComboBox>
+            </Grid>
+            <Frame x:Name="Frames" Grid.Row ="1">
+
+            </Frame>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="next" Grid.Column="10" HorizontalAlignment="Center"  Content=">" VerticalAlignment="Center" FontSize="15" FontFamily="Comic Sans MS" Background="White" BorderThickness="0" Click="next_Click" ></Button>
+                <Button Name="prev" Grid.Column="7" HorizontalAlignment="Center"  Content="&lt;" VerticalAlignment="Center" FontSize="15" FontFamily="Comic Sans MS" Background="White" BorderThickness="0" Click="prev_Click" ></Button>
+
+            </Grid>
+        </Grid>
+
+        <Label Grid.Row="2" Content="Попрыженок 2021 Новосибирск" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#F9969E" Foreground="White" FontFamily="Microsoft Sans Serif" />
+    </Grid>
+</Window>
